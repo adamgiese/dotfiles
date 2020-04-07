@@ -55,13 +55,6 @@ MapToggle <F3> number
 nnoremap <F5> :UndotreeToggle<cr>
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-nnoremap <F11> :m .+1<CR>==
-nnoremap <F12> :m .-2<CR>==
-inoremap <F11> <Esc>:m .+1<CR>==gi
-inoremap <F12> <Esc>:m .-2<CR>==gi
-vnoremap <F11> :m '>+1<CR>gv=gv
-vnoremap <F12> :m '<-2<CR>gv=gv
-
 " Vundle Setup
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -82,25 +75,6 @@ Plugin 'mattn/webapi-vim'
 Plugin 'GabrieleLippi/ydkjs-vim'
 Plugin 'kristijanhusak/vim-js-file-import'
 Plugin 'ap/vim-css-color'
-Plugin 'alvan/vim-closetag'
-
-" closetag settings
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml,jsx'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
-
-" vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'elmcast/elm-vim'
-call plug#end()
 
 " For matchit
 filetype plugin on
@@ -122,6 +96,4 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 
 " supertab settings
-
-
 let g:SuperTabNoCompleteAfter = ['"', "'", '^', '\s']
