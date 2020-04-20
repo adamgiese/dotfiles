@@ -1,0 +1,7 @@
+.DS_Store
+.scratchpad
+.BISECT.sh
+tags
+tags.lock
+tags.temp
+ignored

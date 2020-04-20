@@ -1,0 +1,138 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[user]
+	email = adam.giese@underarmour.com
+	name = Adam Giese
+[grep]
+	patternType = extended
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[alias]
+	# navigation
+	here = rev-parse --show-prefix
+	home = rev-parse --show-toplevel
+
+	# history (logging & blaming)
+	graph = log --graph --oneline --all --decorate
+	today = log --oneline --since=6am --author='Adam Giese' --all
+	standup = log --since='yesterday@midnight' --until='now' --oneline --author='Adam Giese'
+	history = log --reverse -p --follow -- 
+	oneline = log --oneline
+	lg = oneline
+	npm-dependencies = !git blame -s -L /dependencies/,/}/ -- $(git home)/package.json
+	npm-scripts = !git blame -s -L /scripts/,/}/ -- $(git home)/package.json
+	npm-history = !git log --reverse --format=short --patch -L /dependencies/,/}/:$(git home)/package.json
+	npm-history-short = !git log --reverse --format=oneline -L /dependencies/,/}/:$(git home)/package.json
+
+	# branching
+	merged = branch --merged
+	create-branch = checkout -b 
+	delete-branch = branch -D 
+	rename-branch = branch -m 
+	this-branch = rev-parse --abbrev-ref HEAD
+	push-branch = !git push -u origin `git this-branch`
+	master = checkout master
+	dev = checkout develop
+	back = checkout -
+	staging = checkout staging
+	list-recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'
+	recent = !yarn --silent --cwd ~/.dotfiles/node-scripts/picker run start `git list-recent-branches` && git checkout $(cat ~/.dotfiles/node-scripts/picker/choice)
+
+	# diffs
+	origin-diff = !git diff origin/`git this-branch`
+	staged = diff --staged
+  dirty-files = diff --name-only --diff-filter=U
+  dirty-and-new = !git status -s | awk '{print $2}'
+
+	# searches
+  g = grep --break --heading -I -n 
+	todos = grep -i todo -- ':/'
+  grep-functions = grep --function-context 
+
+	# colors
+  hex-machine = grep -IEho "#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})"
+	hsl-machine = grep -IEho "hsla?[(][^)]*[)]"
+	rgb-machine = grep -IEho "rgba?[(][^)]*[)]"
+	unique-hexes = !git hex-machine | sort | uniq | less
+	unique-hsl = !git hsl-machine | sort | uniq | less
+	unique-rgb = !git rgb-machine | sort | uniq | less
+	colors = grep -IEho -e "#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})" --or -e "(hsl|rgb)a?[(][^)]*[)]" -- ":/*.css" ":/*.js" ":/*.jsx" ":/*.scss"
+	count-colors = !git colors | sort | uniq | wc -l
+	unique-colors = !git colors | sort | uniq | less
+
+	# fonts
+	all-fonts = grep -IEho "(font)(-family)?:[^;]*;"
+	fonts = !git all-fonts | sort | uniq | less
+
+	# listing files
+	js = ls-files -- \":(top)*.js\"
+	jsx = ls-files -- \":(top)*.jsx\"
+	css = ls-files -- ":(top)*.css"
+
+	# scratch & todos
+	scratch = !vim `git home`/.scratchpad
+
+	# commiting
+	oops = commit --amend --no-edit --date="now"
+	pop-commit = reset --soft HEAD^
+	squash-two = !git pop-commit && git oops
+	wip = commit --no-verify -m "WIP"
+	wip-all = !git add -A && git wip
+	unstage = reset HEAD .
+	pop-wip = !git pop-commit && git unstage
+	fixup = rebase -i master
+	fixup-dev = rebase -i develop
+
+	# searches
+	ls-conflicted-files = ls-files --unmerged
+	fix-conflicted = !vim $(git ls-conflicted-files)
+
+	# config
+	personal = config user.email "adam.giese@gmail.com"
+	work = config user.email "adam.giese@underarmour.com"
+
+	# cleanup
+	clean-dry = clean -nd
+	clean-force = clean -fd
+	undo-changes = reset --hard
+	undo-patch = checkout -p -- ':/'
+	fuck-this = !git clean-force && git undo-changes
+
+	# niceties
+	remotes = remote -v
+	stashes = stash list
+	branches = branch
+	dry-prune-origin = remote prune origin --dry-run
+	prune-origin = remote prune origin
+
+	# stashing
+	stash-unstaged = stash save -k -a 
+
+	# typo fixes
+	grpe = grep
+	grp = grep
+	checkoiut = checkout
+
+	# hooks
+	hooks = !vim `git home`/.git/hooks/
+
+	# docs
+	glossary = !open https://git-scm.com/docs/gitglossary
+	docs = !open https://git-scm.com/docs
+
+  # misc
+  copy-hash = !git rev-parse --short HEAD | pbcopy
