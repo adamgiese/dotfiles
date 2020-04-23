@@ -6,6 +6,9 @@ alias vmi="vim"
 alias ivm="vim"
 alias bim="vim"
 
+# Navigations
+alias sites="cd ~/sites"
+
 # Image Aliases
 
 nextGenImage() {
