@@ -31,9 +31,12 @@ alias scratch="vim ~/.scratchpad"
 alias copyscratch="pbcopy < ~/.scratchpad"
 alias r=""
 
-# This File
-alias bp="source ~/.bash_profile"
-alias ebp="vim ~/.bash_profile"
+# Dotfiles
+alias bp="dotfiles && source ~/.bash_profile"
+alias ebp="vim ~/dotfiles/dotfiles/.bash_profile"
+alias edit-dotfiles="vim ~/dotfiles"
+alias dotfiles="bash ~/dotfiles/setup.sh"
+alias dot="cd ~/dotfiles"
 
 # Add defaults to common commands
 alias mv='mv -i'
