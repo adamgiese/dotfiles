@@ -103,6 +103,7 @@
 	fix-conflicted = !vim $(git ls-conflicted-files)
 
 	# config
+	edit = !vim ~/dotfiles/dotfiles/.gitconfig
 	personal = config user.email "adam.giese@gmail.com"
 	work = config user.email "adam.giese@underarmour.com"
 
