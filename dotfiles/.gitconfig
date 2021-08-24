@@ -50,7 +50,7 @@
 	back = checkout -
 	staging = checkout staging
 	list-recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'
-	recent = !yarn --silent --cwd ~/dotfiles/node-scripts/picker run start `git list-recent-branches` && git checkout $(cat ~/dotfiles/node-scripts/picker/choice)
+	recent = !git-recent-branches
 
 	# diffs
 	origin-diff = !git diff origin/`git this-branch`

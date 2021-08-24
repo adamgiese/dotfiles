@@ -1,2 +1,2 @@
-node-scripts/*/node_modules
+**/node_modules
 node-scripts/picker/choice
