@@ -4,15 +4,14 @@ const inquirer = require('inquirer');
 const error = string => console.log(chalk.red(string))
 
 void async function () { // to use "awaits"
-  const pattern = argv._[argv._.length - 1]
-
+  const [_, pattern, pathspec = '.'] = argv._
 
   if (!pattern) {
     error('Please provide a git grep pattern')
     return
   }
 
-  const results = await nothrow($`git grep -Il ${pattern} -- ':/'`)
+  const results = await nothrow($`git grep -Il ${pattern} -- ${pathspec}`)
 
   if (results.exitCode) {
     error('No matches found')
@@ -29,5 +28,5 @@ void async function () { // to use "awaits"
       choices: filesWithMatches,
     }
   ])
-  await $`vim ${inquiry.file}`
+  await $`vim --not-a-term ${inquiry.file}`
 }()
