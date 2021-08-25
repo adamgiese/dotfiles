@@ -1,0 +1,19 @@
+{
+  "name": "git-vim",
+  "version": "1.0.0",
+  "description": "'git grep' directly into a vim session",
+  "main": "index.js",
+  "bin": {
+    "git-vim": "index.js"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "zx ./index.js"
+  },
+  "author": "Adam Giese",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "node-cmd": "^5.0.0"
+  }
+}
