@@ -103,11 +103,7 @@ picker () {
 
 # Search
 
-vg () {
-  picker $(git grep -Ilz $1)
-  vim $(choice)
-}
-
+alias vg="git-vim"
 vga () {
   vim $(git grep -lz $1)
 }
