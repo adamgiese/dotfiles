@@ -37,6 +37,7 @@
 	npm-scripts = !git blame -s -L /scripts/,/}/ -- $(git home)/package.json
 	npm-history = !git log --reverse --format=short --patch -L /dependencies/,/}/:$(git home)/package.json
 	npm-history-short = !git log --reverse --format=oneline -L /dependencies/,/}/:$(git home)/package.json
+	authors = !git log --format='%an' | sort | uniq
 
 	# branching
 	merged = branch --merged
