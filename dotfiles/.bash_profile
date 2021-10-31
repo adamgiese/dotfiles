@@ -116,3 +116,13 @@ vsm () {
 findCSS () {
   git grep -IEho "$1:[^;]*;" -- ":(top)*.css" ":(top)*.scss" | sort | uniq | less
 }
+
+# mscore
+
+alias mscore="/Applications/MuseScore\ 3.app/Contents/MacOS/mscore"
+
+# random work
+
+rr () {
+  open $(node ~/mysites/brain/brain-scripts/get-route/random.mjs)
+}
