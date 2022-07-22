@@ -139,3 +139,5 @@
 
   # misc
   copy-hash = !git rev-parse --short HEAD | pbcopy
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs

@@ -1,3 +1,6 @@
+firstCommitSince() {
+  git log master --until="$1" --pretty=format:"%h" | head -n 1
+}
 # Typo Fixes
 
 alias vi="vim"
@@ -24,6 +27,7 @@ slugify() {
 }
 
 alias timestamp='date "+%Y-%m-%d@%H:%M:%S"'
+alias today='date "+%Y-%m-%d"'
 alias eye="watch -c -n .5 "
 alias servethis="python -m SimpleHTTPServer"
 alias getpub="pbcopy < ~/.ssh/id_rsa.pub"
@@ -35,8 +39,8 @@ alias copyscratch="pbcopy < ~/.scratchpad"
 alias r=""
 
 # Dotfiles
-alias bp="dotfiles && source ~/.bash_profile"
-alias ebp="vim ~/dotfiles/dotfiles/.bash_profile"
+alias bp="dotfiles && source ~/.bashrc"
+alias ebp="vim ~/dotfiles/dotfiles/.bashrc"
 alias edit-dotfiles="vim ~/dotfiles"
 alias dotfiles="bash ~/dotfiles/setup.sh"
 alias dot="cd ~/dotfiles"
@@ -51,6 +55,7 @@ alias start="npm run start"
 alias dev="npm run dev"
 
 # Docker
+alias runlocal="LOCAL_ENV=prod docker-compose up local"
 alias dk="docker "
 alias d-c="docker-compose "
 alias dup="docker-compose up "
@@ -126,3 +131,6 @@ alias mscore="/Applications/MuseScore\ 3.app/Contents/MacOS/mscore"
 rr () {
   open $(node ~/mysites/brain/brain-scripts/get-route/random.mjs)
 }
+
+export NODE_PATH=$HOME/.npm/lib/node_modules
+export PATH=$PATH:$HOME/.npm/bin
