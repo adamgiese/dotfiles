@@ -18,6 +18,10 @@ ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 mkdir -p ~/.config
 ln -sf ~/.dotfiles/.starship.toml ~/.config/starship.toml
 
+if command -v brew &> /dev/null; then
+    brew install --cask font-jetbrains-mono-nerd-font
+fi
+
 mise trust ~/.mise.toml
 mise install
 

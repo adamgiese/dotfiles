@@ -1,4 +1,4 @@
 theme = Dracula
-font-family = Menlo
+font-family = JetBrainsMono Nerd Font
 font-size = 18
 keybind = ctrl+space=unbind
