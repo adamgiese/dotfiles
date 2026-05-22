@@ -1,3 +1,11 @@
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'dracula/vim', { 'as': 'dracula' }
+call plug#end()
+
+set termguicolors
+silent! colorscheme dracula
+
 " Display
 set number
 set relativenumber
@@ -35,6 +43,10 @@ set showmode
 set showcmd
 set wildmenu
 set wildmode=list:longest
+set statusline=%f\ %m%r%=%l/%L\ col\ %c
+
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
 
 syntax enable
 filetype plugin indent on
