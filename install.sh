@@ -3,8 +3,9 @@ if ! command -v mise &> /dev/null; then
 fi
 
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 ln -sf ~/.dotfiles/.mise.toml ~/.mise.toml
+ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 
 mkdir -p ~/.config/ghostty
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config

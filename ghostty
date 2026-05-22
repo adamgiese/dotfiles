@@ -1,3 +1,4 @@
 theme = Dracula
 font-family = Menlo
 font-size = 18
+keybind = ctrl+space=unbind
