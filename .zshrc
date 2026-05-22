@@ -7,3 +7,4 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # Aliases
 alias python='python3'
+alias ls='eza'
