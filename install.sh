@@ -15,6 +15,7 @@ if [ ! -f ~/.vim/autoload/plug.vim ]; then
 fi
 mkdir -p ~/.claude/skills
 ln -sf ~/.dotfiles/claude/skills/todo ~/.claude/skills/todo
+ln -sf ~/.dotfiles/claude/skills/query-json ~/.claude/skills/query-json
 
 mkdir -p ~/.config/ghostty
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
@@ -24,7 +25,7 @@ ln -sf ~/.dotfiles/.starship.toml ~/.config/starship.toml
 
 if command -v brew &> /dev/null; then
     brew install --cask font-jetbrains-mono-nerd-font
-    brew install fx
+    brew install fx jq
 fi
 
 vim +PlugInstall +qall
