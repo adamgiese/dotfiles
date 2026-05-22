@@ -1,5 +1,7 @@
-# Mise activation
+# Initializations
 eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
