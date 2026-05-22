@@ -14,7 +14,7 @@ mkdir -p ~/.config/ghostty
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 
 mkdir -p ~/.config
-ln -sf ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -sf ~/.dotfiles/.starship.toml ~/.config/starship.toml
 
 mise install
 mise trust ~/.mise.toml
