@@ -7,3 +7,4 @@
 
 ## Done
 - [x] Find a good font to use & add installation instructions
+- [x] Setup vim configuration
