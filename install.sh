@@ -14,8 +14,9 @@ if [ ! -f ~/.vim/autoload/plug.vim ]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 mkdir -p ~/.claude/skills
-ln -sf ~/.dotfiles/claude/skills/todo ~/.claude/skills/todo
-ln -sf ~/.dotfiles/claude/skills/query-json ~/.claude/skills/query-json
+rm -rf ~/.claude/skills/todo ~/.claude/skills/query-json
+ln -s ~/.dotfiles/claude/skills/todo ~/.claude/skills/todo
+ln -s ~/.dotfiles/claude/skills/query-json ~/.claude/skills/query-json
 
 mkdir -p ~/.config/ghostty
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
