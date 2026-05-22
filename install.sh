@@ -7,6 +7,9 @@ ln -sf ~/.dotfiles/.mise.toml ~/.mise.toml
 ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 
+mkdir -p ~/.claude/skills
+ln -sf ~/.dotfiles/claude/skills/todo ~/.claude/skills/todo
+
 mkdir -p ~/.config/ghostty
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 
