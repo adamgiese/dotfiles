@@ -1,0 +1,9 @@
+[user]
+    name = Adam Giese
+    email = adam.giese@gmail.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
