@@ -4,5 +4,18 @@
     <title>feeds</title>
   </head>
   <body>
+    <outline type="rss" text="r/commandline" title="r/commandline" xmlUrl="https://reddit.com/r/commandline.rss"/>
+    <outline type="rss" text="Simon Willison's Weblog" title="Simon Willison's Weblog" xmlUrl="https://simonwillison.net/atom/everything/"/>
+    <outline type="rss" text="Import AI" title="Import AI" xmlUrl="https://importai.substack.com/feed"/>
+    <outline type="rss" text="Interconnects AI" title="Interconnects AI" xmlUrl="https://www.interconnects.ai/feed"/>
+    <outline type="rss" text="Ahead of AI" title="Ahead of AI" xmlUrl="https://magazine.sebastianraschka.com/feed"/>
+    <outline type="rss" text="Hugging Face Blog" title="Hugging Face Blog" xmlUrl="https://huggingface.co/blog/feed.xml"/>
+    <outline type="rss" text="The Gradient" title="The Gradient" xmlUrl="https://thegradient.pub/rss/"/>
+    <outline type="rss" text="BAIR Blog" title="BAIR Blog" xmlUrl="https://bair.berkeley.edu/blog/feed.xml"/>
+    <outline type="rss" text="Latent Space" title="Latent Space" xmlUrl="https://www.latent.space/feed"/>
+    <outline type="rss" text="MIT Tech Review — AI" title="MIT Tech Review — AI" xmlUrl="https://www.technologyreview.com/topic/artificial-intelligence/feed/"/>
+    <outline type="rss" text="OpenAI News" title="OpenAI News" xmlUrl="https://openai.com/news/rss.xml"/>
+    <outline type="rss" text="Google AI Blog" title="Google AI Blog" xmlUrl="https://blog.google/technology/ai/rss/"/>
+    <outline type="rss" text="Andrej Karpathy" title="Andrej Karpathy" xmlUrl="https://karpathy.bearblog.dev/feed/"/>
   </body>
 </opml>
