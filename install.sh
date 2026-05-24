@@ -31,6 +31,7 @@ fi
 
 mkdir -p ~/.newsboat
 ln -sf ~/.dotfiles/newsboat/config ~/.newsboat/config
+newsboat --import-from-opml ~/.dotfiles/feeds.opml
 
 vim +PlugInstall +qall
 
