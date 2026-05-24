@@ -54,3 +54,4 @@ filetype plugin indent on
 " Keymaps
 nnoremap ; :
 nnoremap : ;
+inoremap jk <Esc>
