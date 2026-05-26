@@ -26,7 +26,13 @@ ln -sf ~/.dotfiles/.starship.toml ~/.config/starship.toml
 
 if command -v brew &> /dev/null; then
     brew install --cask font-jetbrains-mono-nerd-font
-    brew install fx jq newsboat
+    brew install fx jq newsboat fzf
+else
+    # Non-brew fallback: fzf git installer
+    if [ ! -d "$HOME/.fzf" ]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install --key-bindings --completion --no-update-rc
+    fi
 fi
 
 mkdir -p ~/.newsboat
