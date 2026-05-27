@@ -22,6 +22,24 @@ bsesh() {
     tmux send-keys 'brain && claude' Enter
 }
 
+# rg + fzf live grep
+if command -v rg &> /dev/null && command -v fzf &> /dev/null; then
+    frg() {
+        local preview_cmd
+        if command -v bat &> /dev/null; then
+            preview_cmd='bat --color=always {1} --highlight-line {2}'
+        else
+            preview_cmd='cat {1}'
+        fi
+        fzf --disabled --ansi \
+            --bind "start:reload:rg --line-number --color=always {q} || true" \
+            --bind "change:reload:rg --line-number --color=always {q} || true" \
+            --delimiter : \
+            --preview "$preview_cmd" \
+            --preview-window 'right:60%:+{2}+3/3'
+    }
+fi
+
 # fzf
 if command -v fzf &> /dev/null; then
     export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
