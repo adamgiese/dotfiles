@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 alias python='python3'
 alias ls='eza'
 alias brain='cd ~/Documents/Vaults/GooseBrain'
+alias claims='cd ~/Documents/Vaults/GooseBrain/vault/Central\ Library/Claims'
 alias vf='vim "$(fzf)"'
 alias fclaim='fzf --walker-root ~/Documents/Vaults/GooseBrain/vault/Central\ Library/Claims --delimiter / --with-nth -1 -i'
 
