@@ -13,6 +13,14 @@ alias ls='eza'
 alias brain='cd ~/Documents/Vaults/GooseBrain'
 alias vf='vim "$(fzf)"'
 
+# Functions
+bsesh() {
+    tmux new-window
+    tmux send-keys 'brain && clear' Enter
+    tmux split-window -h
+    tmux send-keys 'brain && claude' Enter
+}
+
 # fzf
 if command -v fzf &> /dev/null; then
     export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
