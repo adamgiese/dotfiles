@@ -23,6 +23,10 @@ bsesh() {
     tmux send-keys 'brain && claude' Enter
 }
 
+wlinks() {
+    grep -o '\[\[[^]]*\]\]' "$1" | sed 's/\[\[//g;s/\]\]//g'
+}
+
 # rg + fzf live grep
 if command -v rg &> /dev/null && command -v fzf &> /dev/null; then
     frg() {
