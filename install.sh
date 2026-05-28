@@ -3,6 +3,7 @@ if ! command -v mise &> /dev/null; then
 fi
 
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/.zprofile ~/.zprofile
 ln -sf ~/.dotfiles/.vimrc ~/.vimrc
 ln -sf ~/.dotfiles/.mise.toml ~/.mise.toml
 ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf

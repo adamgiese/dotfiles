@@ -2,4 +2,3 @@ theme = Dracula
 font-family = JetBrainsMono Nerd Font
 font-size = 18
 keybind = ctrl+space=unbind
-login-shell = true
