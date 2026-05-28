@@ -24,9 +24,12 @@ ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 mkdir -p ~/.config
 ln -sf ~/.dotfiles/.starship.toml ~/.config/starship.toml
 
+mkdir -p ~/.config/glow
+ln -sf ~/.dotfiles/glow.yml ~/.config/glow/glow.yml
+
 if command -v brew &> /dev/null; then
     brew install --cask font-jetbrains-mono-nerd-font
-    brew install fx jq newsboat fzf ripgrep
+    brew install fx jq newsboat fzf ripgrep glow
 else
     # Non-brew fallback: fzf git installer
     if [ ! -d "$HOME/.fzf" ]; then
